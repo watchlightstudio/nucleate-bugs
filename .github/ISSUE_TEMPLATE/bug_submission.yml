@@ -1,0 +1,157 @@
+name: Bug Report
+description: Report a bug encountered in the application
+title: "[Bug]: "
+labels: ["bug"]
+assignees: []
+
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve the app 🙌  
+        Please complete the fields below so we can reproduce the issue.
+
+  # ------------------------------------------------------------
+  # Environment
+  # ------------------------------------------------------------
+
+  - type: input
+    id: app_version
+    attributes:
+      label: App Version
+      description: You can find this in Settings → About
+      placeholder: "v1.3.2"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: edition
+    attributes:
+      label: Edition
+      description: Which version of the app are you using?
+      options:
+        - Free
+        - Pro
+        - Beta
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      options:
+        - Windows 11
+        - Windows 10
+        - macOS
+        - Linux
+        - Other
+    validations:
+      required: true
+
+  # ------------------------------------------------------------
+  # Bug Details
+  # ------------------------------------------------------------
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Minor UI issue
+        - Functional bug
+        - Data issue
+        - Performance issue
+        - Crash
+
+  - type: dropdown
+    id: module
+    attributes:
+      label: Module / Area
+      description: Where did the issue occur?
+      options:
+        - User Modes
+        - Mode Builder
+        - Nucleate Labs
+        - Smart Notes
+        - Transcription
+        - Exporting
+        - Settings
+        - Installer / Uninstall
+        - Licensing
+        - Performance
+        - UI / Layout
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug_description
+    attributes:
+      label: Describe the Bug
+      description: A clear and concise description of what happened.
+      placeholder: "When I select Weekly summary, the app crashes..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction_steps
+    attributes:
+      label: Steps to Reproduce
+      description: Please list exact steps so we can reproduce the issue.
+      placeholder: |
+        1. Go to User Modes
+        2. Select Custom Mode X
+        3. Switch to Weekly
+        4. Click Generate
+        5. Crash occurs
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual_behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
+    validations:
+      required: true
+
+  # ------------------------------------------------------------
+  # Logs / Screenshots
+  # ------------------------------------------------------------
+
+  - type: textarea
+    id: error_logs
+    attributes:
+      label: Error Logs (if available)
+      description: |
+        Please paste any error messages or stack traces here.
+        You may also attach log files directly to the issue.
+      render: shell
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: |
+        Add screenshots, screen recordings, or any other helpful details.
+        You can drag & drop files directly into this issue.
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Before Submitting
+      options:
+        - label: I have reproduced this issue at least once
+          required: true
+        - label: I have included version and OS information
+          required: true
