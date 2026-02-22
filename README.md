@@ -1,6 +1,6 @@
 # nucleate-bugs
 
-# 🐞 App Bug Reports
+# 🐞 Nucleate Bug Reports
 
 Welcome!  
 
